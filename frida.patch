@@ -1,0 +1,29 @@
+--- frida-drcov.py	2025-05-16 16:01:20.010854692 +0200
++++ frida-drcov.py	2025-05-16 15:23:30.909817369 +0200
+@@ -6,7 +6,7 @@
+ import os
+ import signal
+ import sys
+-
++import time
+ import frida
+ 
+ """
+@@ -325,7 +325,9 @@
+ 
+     print('[*] Now collecting info, control-C or control-D to terminate....')
+ 
+-    sys.stdin.read()
++    while not session.is_detached:  # Check if the session is still attached
++        time.sleep(0.1)  # Avoid busy-waiting; check periodically
++        print("Process is still running...")
+ 
+     print('[*] Detaching, this might take a second...')
+     session.detach()
+@@ -340,4 +342,4 @@
+     sys.exit(0)
+ 
+ if __name__ == '__main__':
+-    main()
++    main()
+\ No newline at end of file
