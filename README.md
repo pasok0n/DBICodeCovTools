@@ -1,7 +1,7 @@
 # DBICodeCovTools
 This repository contains the source code for the tools utilized in DBICodeCovBench.
 
-frida-spawn.py is a modified version from yrp's [frida-drcov.py](https://github.com/gaasedelen/lighthouse/tree/master/coverage/frida) to enable spawn mode.
+[frida-spawn.py](https://github.com/pasok0n/DBICodeCovTools/blob/main/frida-spawn.py) is a modified version from yrp's [frida-drcov.py](https://github.com/gaasedelen/lighthouse/tree/master/coverage/frida) to enable spawn mode.
 
 The [frida.patch](https://github.com/pasok0n/DBICodeCovTools/blob/main/frida.patch) file applies modifications to yrp's original [frida-drcov.py](https://github.com/gaasedelen/lighthouse/tree/master/coverage/frida) script. These modifications enable the instrumentation to cease automatically upon the termination of the target process.
 
